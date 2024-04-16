@@ -159,6 +159,23 @@ function toggleFull() {
   recalculate();
 }
 
+/**************  once-toggle version **********************/
+
+// halfButton.addEventListener("click", toggleHalf);
+// function toggleHalf(){
+//   if(halfButton.classList.contains("clicked") == false){
+//     halfButton.classList.add("clicked");
+//     fullButton.classList.remove("clicked");
+//   }
+// }
+// fullButton.addEventListener("click", toggleFull);
+// function toggleFull(){
+//   if(fullButton.classList.contains("clicked") == false){
+//     fullButton.classList.add("clicked");
+//     halfButton.classList.remove("clicked");
+//   }
+// }
+
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 function recalculate() {
