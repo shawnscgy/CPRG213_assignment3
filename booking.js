@@ -18,109 +18,51 @@ const FULL_DAY_RATE = 35;
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
-
 monButton.addEventListener("click", toggleMon);
 function toggleMon() {
-  if (monButton.classList.contains("clicked")) {
-    selectedDays -= 1;
-  } else {
+  if (monButton.classList.contains("clicked") == false) {
     selectedDays += 1;
+    monButton.classList.toggle("clicked");
   }
-  monButton.classList.toggle("clicked");
+
   recalculate();
 }
 
 tueButton.addEventListener("click", toggleTue);
 function toggleTue() {
-  if (tueButton.classList.contains("clicked")) {
-    selectedDays -= 1;
-  } else {
+  if (tueButton.classList.contains("clicked") == false) {
     selectedDays += 1;
+    tueButton.classList.toggle("clicked");
   }
-  tueButton.classList.toggle("clicked");
   recalculate();
 }
 
 wedButton.addEventListener("click", toggleWed);
 function toggleWed() {
-  if (wedButton.classList.contains("clicked")) {
-    selectedDays -= 1;
-  } else {
+  if (wedButton.classList.contains("clicked") == false) {
     selectedDays += 1;
+    wedButton.classList.toggle("clicked");
   }
-  wedButton.classList.toggle("clicked");
   recalculate();
 }
 
 thuButton.addEventListener("click", toggleThu);
 function toggleThu() {
-  if (thuButton.classList.contains("clicked")) {
-    selectedDays -= 1;
-  } else {
+  if (thuButton.classList.contains("clicked") == false) {
     selectedDays += 1;
+    thuButton.classList.toggle("clicked");
   }
-  thuButton.classList.toggle("clicked");
   recalculate();
 }
 
 friButton.addEventListener("click", toggleFri);
 function toggleFri() {
-  if (friButton.classList.contains("clicked")) {
-    selectedDays -= 1;
-  } else {
+  if (friButton.classList.contains("clicked") == false) {
     selectedDays += 1;
+    friButton.classList.toggle("clicked");
   }
-  friButton.classList.toggle("clicked");
   recalculate();
 }
-
-/*****************  once-toggle version  **********************/
-
-// monButton.addEventListener("click", toggleMon);
-// function toggleMon() {
-//   if (monButton.classList.contains("clicked") == false) {
-//     selectedDays += 1;
-//     monButton.classList.toggle("clicked");
-//   }
-
-//   recalculate();
-// }
-
-// tueButton.addEventListener("click", toggleTue);
-// function toggleTue() {
-//   if (tueButton.classList.contains("clicked") == false) {
-//     selectedDays += 1;
-//     tueButton.classList.toggle("clicked");
-//   }
-//   recalculate();
-// }
-
-// wedButton.addEventListener("click", toggleWed);
-// function toggleWed() {
-//   if (wedButton.classList.contains("clicked") == false) {
-//     selectedDays += 1;
-//     wedButton.classList.toggle("clicked");
-//   }
-//   recalculate();
-// }
-
-// thuButton.addEventListener("click", toggleThu);
-// function toggleThu() {
-//   if (thuButton.classList.contains("clicked") == false) {
-//     selectedDays += 1;
-//     thuButton.classList.toggle("clicked");
-//   }
-//   recalculate();
-// }
-
-// friButton.addEventListener("click", toggleFri);
-// function toggleFri() {
-//   if (friButton.classList.contains("clicked") == false) {
-//     selectedDays += 1;
-//     friButton.classList.toggle("clicked");
-//   }
-//   recalculate();
-// }
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 clearButton.addEventListener("click", removeClicked);
@@ -146,6 +88,7 @@ function toggleHalf() {
     halfButton.classList.add("clicked");
     fullButton.classList.remove("clicked");
   }
+  recalculate();
 }
 fullButton.addEventListener("click", toggleFull);
 function toggleFull() {
@@ -153,6 +96,7 @@ function toggleFull() {
     fullButton.classList.add("clicked");
     halfButton.classList.remove("clicked");
   }
+  recalculate();
 }
 
 /********* calculate *********/
