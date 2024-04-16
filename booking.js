@@ -21,50 +21,106 @@ const FULL_DAY_RATE = 35;
 
 monButton.addEventListener("click", toggleMon);
 function toggleMon() {
-  if (monButton.classList.contains("clicked") == false) {
+  if (monButton.classList.contains("clicked")) {
+    selectedDays -= 1;
+  } else {
     selectedDays += 1;
-    monButton.classList.toggle("clicked");
   }
-
+  monButton.classList.toggle("clicked");
   recalculate();
 }
 
 tueButton.addEventListener("click", toggleTue);
 function toggleTue() {
-  if (tueButton.classList.contains("clicked") == false) {
+  if (tueButton.classList.contains("clicked")) {
+    selectedDays -= 1;
+  } else {
     selectedDays += 1;
-    tueButton.classList.toggle("clicked");
   }
+  tueButton.classList.toggle("clicked");
   recalculate();
 }
 
 wedButton.addEventListener("click", toggleWed);
 function toggleWed() {
-  if (wedButton.classList.contains("clicked") == false) {
+  if (wedButton.classList.contains("clicked")) {
+    selectedDays -= 1;
+  } else {
     selectedDays += 1;
-    wedButton.classList.toggle("clicked");
   }
+  wedButton.classList.toggle("clicked");
   recalculate();
 }
 
 thuButton.addEventListener("click", toggleThu);
 function toggleThu() {
-  if (thuButton.classList.contains("clicked") == false) {
+  if (thuButton.classList.contains("clicked")) {
+    selectedDays -= 1;
+  } else {
     selectedDays += 1;
-    thuButton.classList.toggle("clicked");
   }
+  thuButton.classList.toggle("clicked");
   recalculate();
 }
 
 friButton.addEventListener("click", toggleFri);
 function toggleFri() {
-  if (friButton.classList.contains("clicked") == false) {
+  if (friButton.classList.contains("clicked")) {
+    selectedDays -= 1;
+  } else {
     selectedDays += 1;
-    friButton.classList.toggle("clicked");
   }
+  friButton.classList.toggle("clicked");
   recalculate();
 }
 
+/*****************  once-toggle version  **********************/
+
+// monButton.addEventListener("click", toggleMon);
+// function toggleMon() {
+//   if (monButton.classList.contains("clicked") == false) {
+//     selectedDays += 1;
+//     monButton.classList.toggle("clicked");
+//   }
+
+//   recalculate();
+// }
+
+// tueButton.addEventListener("click", toggleTue);
+// function toggleTue() {
+//   if (tueButton.classList.contains("clicked") == false) {
+//     selectedDays += 1;
+//     tueButton.classList.toggle("clicked");
+//   }
+//   recalculate();
+// }
+
+// wedButton.addEventListener("click", toggleWed);
+// function toggleWed() {
+//   if (wedButton.classList.contains("clicked") == false) {
+//     selectedDays += 1;
+//     wedButton.classList.toggle("clicked");
+//   }
+//   recalculate();
+// }
+
+// thuButton.addEventListener("click", toggleThu);
+// function toggleThu() {
+//   if (thuButton.classList.contains("clicked") == false) {
+//     selectedDays += 1;
+//     thuButton.classList.toggle("clicked");
+//   }
+//   recalculate();
+// }
+
+// friButton.addEventListener("click", toggleFri);
+// function toggleFri() {
+//   if (friButton.classList.contains("clicked") == false) {
+//     selectedDays += 1;
+//     friButton.classList.toggle("clicked");
+//   }
+//   recalculate();
+// }
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 clearButton.addEventListener("click", removeClicked);
@@ -83,24 +139,20 @@ function removeClicked() {
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
+
 halfButton.addEventListener("click", toggleHalf);
 function toggleHalf() {
-  halfButton.classList.toggle("clicked");
-  halfButton.classList.contains(
-    "clicked",
-    fullButton.classList.remove("clicked")
-  );
-  recalculate();
+  if (halfButton.classList.contains("clicked") == false) {
+    halfButton.classList.add("clicked");
+    fullButton.classList.remove("clicked");
+  }
 }
-
 fullButton.addEventListener("click", toggleFull);
 function toggleFull() {
-  fullButton.classList.toggle("clicked");
-  fullButton.classList.contains(
-    "clicked",
-    halfButton.classList.remove("clicked")
-  );
-  recalculate();
+  if (fullButton.classList.contains("clicked") == false) {
+    fullButton.classList.add("clicked");
+    halfButton.classList.remove("clicked");
+  }
 }
 
 /********* calculate *********/
