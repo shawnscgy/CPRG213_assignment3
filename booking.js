@@ -167,6 +167,7 @@ function toggleFull() {
 //     halfButton.classList.add("clicked");
 //     fullButton.classList.remove("clicked");
 //   }
+//   recalculate();
 // }
 // fullButton.addEventListener("click", toggleFull);
 // function toggleFull(){
@@ -174,6 +175,7 @@ function toggleFull() {
 //     fullButton.classList.add("clicked");
 //     halfButton.classList.remove("clicked");
 //   }
+//   recalculate();
 // }
 
 /********* calculate *********/
